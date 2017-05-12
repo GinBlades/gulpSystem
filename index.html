@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>SystemJS demo</title>
+  </head>
+  <body>
+    <script src="dist/vendor.js"></script>
+    <script>
+      SystemJS.config({
+        map: {
+          $: "dist/vendor.js",
+          jquery: "dist/vendor.js"
+        }
+      })
+      SystemJS.import("dist/bundle.js").then(function() {
+        System.import("index");
+      }).catch(function(err) {
+        console.error(err);
+      });
+    </script>
+  </body>
+</html>

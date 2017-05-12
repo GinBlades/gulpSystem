@@ -1,0 +1,28 @@
+{
+  "name": "backtogulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^2.0.43",
+    "@types/lodash": "^4.14.64",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.6",
+    "http-server": "^0.10.0",
+    "jquery": "^3.2.1",
+    "jquery-validation": "^1.16.0",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.2",
+    "systemjs": "^0.20.12",
+    "typescript": "^2.3.2"
+  }
+}
