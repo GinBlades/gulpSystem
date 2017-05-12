@@ -1,6 +1,7 @@
 var gulp = require("gulp"),
     ts = require("gulp-typescript"),
-    concat = require("gulp-concat");
+    concat = require("gulp-concat"),
+    builder = require("gulp-systemjs-builder");
 
 gulp.task("tsc", ["vendor"], function() {
     var tsProject = ts.createProject("tsconfig.json");
@@ -8,6 +9,17 @@ gulp.task("tsc", ["vendor"], function() {
         .pipe(tsProject());
     return tsResult.js.pipe(gulp.dest("."));
 });
+
+gulp.task("build", function() {
+    var sb = builder();
+    sb.loadConfigSync("./system.config.js");
+
+    sb.buildStatic("app/index.ts", "bundle.js", {
+        minify: false,
+        mangle: false
+    })
+    .pipe(gulp.dest("dist"));
+})
 
 gulp.task("vendor", function() {
     return gulp.src([
